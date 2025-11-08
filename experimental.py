@@ -97,7 +97,7 @@ def run_llama(prompt: str, ip: str):
 
 
 def main():
-    run_llama('Who are you? Answer in short responses.', 'http://localhost:8080/v1/chat/completions')
+    run_llama('Who are you? Answer in short responses.', 'http://localhost:8000/v1/chat/completions')
 
 
 if __name__ == '__main__':

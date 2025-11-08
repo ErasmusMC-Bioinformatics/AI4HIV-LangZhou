@@ -44,7 +44,7 @@ def evaluate(dataset: str | pd.DataFrame, pipe):
     for idx, row in tqdm(dataset.iterrows(), total=dataset.shape[0]):
         prompt = row['prompt']
 
-        for _ in range(3):
+        for _ in range(1):
             if isinstance(pipe, tuple):
                 prediction, output = run_unsloth(prompt, pipe)
             elif isinstance(pipe, str):
@@ -114,7 +114,7 @@ def main(backend: str, bit: Optional[int], dataset: str, add: bool = False,):
 
         pipe = (model, tokenizer)
     else:
-        pipe = 'http://localhost:8080/v1/chat/completions'
+        pipe = 'http://localhost:8000/v1/chat/completions'
 
     try:
         evaluate(dataset, pipe)
